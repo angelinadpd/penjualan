@@ -3,7 +3,10 @@
 @section('content')
 
 <div class="row">
-<h1>Data Barang</h1>
+ <div class="col-lg-12">
+  <h1 class="page-header" align="center">
+    Data Barang
+  </h1>
 <a href="{{route('barangs.create')}}" class="pull-left btn btn-primary" id="create-barang" style="margin-right: 5px; margin-bottom: 20px">
   <i class="icon-plush icon-white"></i>Tambah Data</a><br><br><br>
 <div class="table-responsive">
@@ -44,4 +47,5 @@
   {!! $barangs->links() !!} 
   </div>
 </div> 
+</div>
 @endsection

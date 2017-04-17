@@ -21,13 +21,18 @@ class RealisasiController extends Controller
 
     public function create()
     {    
-        $pesan= DB::table('pesan')->get();
+        $pesan= DB::table('pesan')
+                                ->where('status', '!=', 'Masuk')
+                                ->where('status', '!=', 'Batal')
+                                ->get();
         return view('realisasis.create',['pesan'=>$pesan]);
     }
 
     public function store(Request $request)
     {
-        // $pesans=DB::table('pesan') ->where('idpesan', '=',$idpesan) ->update(['status' => 'Masuk']);
+        $pesans=DB::table('pesan')
+                        ->where('idpesan', '=',$request->idpesan)
+                        ->update(['status' => $request->status]);
 
         $price = $request->price;
         $qty = $request->qty;

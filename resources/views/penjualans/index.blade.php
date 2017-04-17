@@ -1,9 +1,11 @@
 @extends('home')
 @section('content'){{ Session::get('message') }}
 
-
 <div class="row">
-<h1>Data Penjualan</h1>
+ <div class="col-lg-12">
+  <h1 class="page-header" align="center">
+    Data Penjualan
+  </h1>
 <a href="{{route('penjualans.create')}}" class="pull-left btn btn-primary" id="create-penjualan" style="margin-right: 5px; margin-bottom: 20px">
   <i class="icon-plush icon-white"></i>Tambah Data</a><br><br><br>
 <div class="table-responsive">
@@ -41,5 +43,6 @@
 </tbody>
 </table>
           {!! $penjualans->links() !!} 
+  </div>
   </div>  
 @endsection

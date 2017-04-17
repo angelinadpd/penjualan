@@ -25,5 +25,8 @@ class RoleTableSeeder extends Seeder
         		'description' => 'User diperbolehkan mengelola dan mengedit user lain'
         	]
         ];
+        foreach ($role as $key => $value) {
+            Role::create($value);
+        }
     }
 }

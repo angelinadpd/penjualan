@@ -20,8 +20,8 @@ class Pesan extends Model implements
   protected $table = 'pesan';
   // protected $guarded = ['idpesan'];
 
-  // public function laporanpembelian()
-  //   {
-  //       return $this->belongsTo('App\laporanpembelian');
-  //   }
+  public function laporan_pemesanan()
+    {
+        return $this->belongsTo('App\Laporan_Pemesanan');
+    }
 }

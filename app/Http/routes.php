@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/layouts.app', function () {
     return view('layouts.app');
 });
+Route::get('/laporans.default', function () {
+    return view('laporans.default');
+});
 
 Route::auth();
 
@@ -95,6 +98,14 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('penjualans/{idpenjualan}/edit',['as'=>'penjualans.edit','uses'=>'PenjualanController@edit','middleware' => ['permission:penjualan-edit']]);
 	Route::patch('penjualans/{idpenjualan}',['as'=>'penjualans.update','uses'=>'PenjualanController@update','middleware' => ['permission:penjualan-edit']]);
 	Route::delete('penjualans/{idpenjualan}',['as'=>'penjualans.show','uses'=>'PenjualanController@destroy','middleware' => ['permission:penjualan-delete']]);
+
+//LAPORAN-PEMESANANS
+	Route::get('laporan_pemesanans',['as'=>'laporan_pemesanans.index','uses'=>'LaporanPemesananController@index','middleware' => ['permission:laporan_pemesanan-list|laporan_pemesanan-harian|laporan_pemesanan-mingguan|laporan_pemesanan-bulanan|laporan_pemesanan-tahunan']]);
+	Route::get('laporan_pemesanans/harian',['as'=>'laporan_pemesanans.harian','uses'=>'LaporanPemesananController@harian','middleware' => ['permission:laporan_pemesanan-harian']]);
+	Route::get('laporan_pemesanans/mingguan',['as'=>'laporan_pemesanans.mingguan','uses'=>'LaporanPemesananController@mingguan','middleware' => ['permission:laporan_pemesanan-mingguan']]);
+	Route::get('laporan_pemesanans/bulanan',['as'=>'laporan_pemesanans.bulanan','uses'=>'LaporanPemesananController@bulanan','middleware' => ['permission:laporan_pemesanan-bulanan']]);
+	Route::get('laporan_pemesanans/tahunan',['as'=>'laporan_pemesanans.tahunan','uses'=>'LaporanPemesananController@tahunan','middleware' => ['permission:laporan_pemesanan-tahunan']]);
+
 });
 
 

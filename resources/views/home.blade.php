@@ -94,6 +94,9 @@
                             <li><a href="{{route('realisasis.index')}}"><i class="fa fa-circle-o"> Realisasi Pemesanan </i></a></li>
                             <li><a href="{{route('penjualans.index')}}"><i class="fa fa-circle-o"> Penjualan </i></a></li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="{{ url('/laporans.default') }}"><i class="fa fa-fw fa-book"></i> Laporan </a>
                     </li>                
                 </ul>
             </div>
@@ -103,43 +106,17 @@
 
         <div id="page-wrapper">
             <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Politeknik Negeri Padang
-                        </h1>
-
-        <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="fa fa-home"></i> Home
-                            </li>
-                        </ol>
-                    </div>
-                </div>
                        
-                <!-- /.row -->
-                            <div class="panel-body">                                
-                                      @yield('content')      
-                                   
-                            </div>
+                        <!-- /.row -->
+                        <div class="panel-body">                                
+                            @yield('content')                
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
-
             </div>
-            <!-- /.container-fluid -->
-
         </div>
-        <!-- /#page-wrapper -->
-
     </div>
-    <!-- /#wrapper -->
+
 
 
     <!-- jQuery -->

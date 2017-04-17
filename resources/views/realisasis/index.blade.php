@@ -3,7 +3,10 @@
 
 
 <div class="row">
-<h1>Data Realisasi Pembelian</h1>
+ <div class="col-lg-12">
+  <h1 class="page-header" align="center">
+    Data Realisasi Pemesanan
+  </h1>
 <a href="{{route('realisasis.create')}}" class="pull-left btn btn-primary" id="create-realisasi" style="margin-right: 5px; margin-bottom: 20px">
   <i class="icon-plush icon-white"></i>Tambah Data</a><br><br><br>
 <div class="table-responsive">
@@ -42,4 +45,5 @@
 </table>
           {!! $realisasis->links() !!} 
   </div>  
+  </div>
 @endsection

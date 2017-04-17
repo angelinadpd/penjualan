@@ -10,18 +10,24 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class Barang extends Model implements
+class Laporan_Pemesanan extends implements
     AuthenticatableContract,
     AuthorizableContract,
     CanResetPasswordContract
 {
-  use Authenticatable, Authorizable, CanResetPassword;
+    use Authenticatable, Authorizable, CanResetPassword;
 
-  protected $table = 'barang';
-  
-  public function laporan_pemesanan()
-    {
-        return $this->belongsTo('App\Laporan_Pemesanan');
-    }
-  
+	  protected $table = 'laporan_pemesanan';
+	  protected $guarded = ['idlaporan_pemesanan'];
+	  protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+
+	   public function pesan()
+	    {
+	        return $this->hasMany('App\Pesan');
+	    }
+
+	   public function barang()
+	    {
+	        return $this->hasMany('App\Barang');
+	    }
 }

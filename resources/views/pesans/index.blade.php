@@ -2,7 +2,10 @@
 @section('content')
 
 <div class="row">
-<h1>Data Pemesanan</h1>
+ <div class="col-lg-12">
+  <h1 class="page-header" align="center">
+    Data Pemesanan
+  </h1>
 <a href="{{route('pesans.create')}}" class="pull-left btn btn-primary" id="create-pesan" style="margin-right: 5px; margin-bottom: 20px">
   <i class="icon-plush icon-white"></i>Tambah Data</a><br><br><br>
 <div class="table-responsive">
@@ -37,5 +40,6 @@
 </tbody>
 </table>
           {!! $pesans->links() !!} 
+  </div>
   </div>  
 @endsection
